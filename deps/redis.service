@@ -1,0 +1,11 @@
+[Unit]
+Description=redis
+
+[Service]
+ExecStart=/usr/bin/rkt run \
+	--net=host \
+        --volume redis,kind=host,source=/tmp/dump.rdb \
+        unixvoid.com/redis
+
+[Install]
+WantedBy=multi-user.target

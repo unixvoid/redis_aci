@@ -4,7 +4,7 @@ Description=redis
 [Service]
 ExecStart=/usr/bin/rkt run \
 	--net=host \
-        --volume redis,kind=host,source=/tmp/dump.rdb \
+        --volume redis,kind=host,source=/tmp/redisdata \
         unixvoid.com/redis
 
 [Install]
